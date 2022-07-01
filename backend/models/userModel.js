@@ -22,7 +22,6 @@ const userSchema = mongoose.Schema({
 
     phoneNumber: {
         type:String,
-        required:true,
     }
 },{
     timestamps: true
