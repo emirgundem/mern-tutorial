@@ -15,6 +15,7 @@ const setGoal = asyncHandler(async(req,res) =>{
       res.status(400)
       throw new Error('Please add a text file')
     }
+
     const goal = await Goal.create({
         text: req.body.text
     })
@@ -46,12 +47,13 @@ const deleteGoal = asyncHandler(async(req,res) => {
 
 
 
-
 module.exports = {
     getGoals,
     setGoal,
     updateGoal,
     deleteGoal
 }
+
+
 
 

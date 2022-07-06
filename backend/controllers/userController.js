@@ -85,9 +85,13 @@ const loginUser = asyncHandler(async(req,res) => {
 //@access Public
 
 const getUser = asyncHandler(async(req,res) => {
-    res.json({message:'User Data'})
+    const {_id,name,email} = await User.findById(req.user.id)
+    res.json({
+        id: _id,
+        name,
+        email
+    })
 }) 
-
 
 
 //Generate JWT
